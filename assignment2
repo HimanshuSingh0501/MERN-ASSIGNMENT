@@ -1,0 +1,46 @@
+Q) ADD FUNCTION 
+
+function add(...args) {
+    var sum=0 ;
+    for (var i=0;i<arguments.length;i++){
+        var x= arguments[i];
+        
+        if (x instanceof Array== true ){ 
+            for (var j=0; j<x.length; j++){
+                sum = sum + add(x[j]);
+            }
+        }
+        else if (x instanceof Function){
+            var y = x;
+            sum = sum + y;
+        } 
+        else if (isNaN(parseInt(x)) || !isFinite(parseInt(x))) x=0;
+        else{
+            sum= sum + parseInt(x);
+        }
+    }
+    return sum;
+    
+}
+
+
+Q2) PROGRAM TO DISPLAY THE CURRENT DAY AND TIME IN 12 HOUR CLOCK.
+
+var date = new Date();
+var days =["Sunday","Monday","Tuesday","Wednesday","thursday","friday","saturday"];
+var currentday =days[date.getDay()];
+var AMPM = date.getHours()>=12?"PM":"AM";
+var HOUR = date.getHours()>=12?date.getHours()-12:date.getHours();
+var currenttime = HOUR+":"+date.getMinutes()+":"+ date.getSeconds() + " "+AMPM;
+console.log("current day"+ currentday);
+console.log("current time"+ currenttime);
+
+
+Q3) PROGRAM TO DISPALY THE CURRENT DATE IN DD/MM/YYYY AND MM/DD/YYYY FORMAT .
+
+var date = new Date();
+var month= date.getMonth();
+var da = date.getDate();
+var year =date.getFullYear();
+console.log(da +"/"+month+"/"+year);
+console.log(month +"/"+da+"/"+year);
