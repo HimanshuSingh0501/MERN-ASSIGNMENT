@@ -1,0 +1,42 @@
+WAP A PROGRAM TO DISPLAY THE AREA AND PERIMETEROF RECTANGLE BY TAKING INPUT FROM USER USING ALL FOUR TYPE OF FUNCTION.
+
+#DEFAULT FUNCTION
+function area() {
+    var length = (Number(prompt("enter length")));
+    var breadth = (Number(prompt("enter breadth")));
+    console.log("Area of rectangle " , length*breadth);
+    console.log("perimeter of rectangle",(2*(length+breadth)));   
+}
+
+
+#ANONMYOUS FUNCTION OR FUNCTION EXPRESSION
+
+function calc(){
+var area= function(x,y){
+    console.log("area", x*y);
+}
+var perimeter= function(x,y){
+    console.log("perimeter",2*(x+y));
+}
+return {area,perimeter};
+}
+
+#NAMED FUNCTION EXPRESSION
+
+function calc(){
+var area= function area(x,y){
+    console.log("area", x*y);
+}
+var perimeter= function perimeter(x,y){
+    console.log("perimeter",2*(x+y));
+}
+return {area,perimeter};
+}
+  
+
+#ARROW FUNCTION
+area=()=>{
+    var length = (parseInt(prompt("enter length")));
+    var breadth = (parseInt(prompt("enter breadth")));
+    console.log("Area of rectangle " , length*breadth);
+    console.log("perimeter of rectangle",(2*(length+breadth)));}
