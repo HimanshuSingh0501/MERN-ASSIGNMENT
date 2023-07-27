@@ -11,7 +11,7 @@ console.log(salary.reduce((a,c)=>((a>c)?a:c),0));
 3. Count Those Salaries whose > 10000, note : don't use filter.
 Hint : reduce function
 //code
-console.log(salary.reduce((sum1,salary)=>((salary >= 10000)?sum1+salary:sum1),0));
+console.log(salary.reduce((sum1,salary)=>((salary >= 10000)?sum1+1:sum1),0));
 
 4. Maintain an Array of Employees. (Array of Objects), Now Sort the Employee by Name and Salary.
 //code
